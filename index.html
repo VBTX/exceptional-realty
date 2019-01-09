@@ -9,7 +9,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
+	<div id="social">
+		<a href="#">Twitter</a>
+		<a href="#">Facebook</a>
+		<a href="#">Google Plus</a>
+	</div>
 	<header>
+		<div class="wrapper">
 		<div id="logo">
 	<h1> Exceptional</h1>
 	<h2> Realty Group</h2>
@@ -22,9 +28,10 @@
 	<a href="contact.html">Contact Us&nbsp;</a>
 	<a href="http://hud.gov" target="_blank.">H.U.D.</a>
 	</nav>
+</div> <!--wrapper -->
 </header>
-
-<section id="featured property">
+<div class="wrapper clearfix">
+<section id="featured property" class="col-3 first">
 	<figure>
 	<img src="images/intropic.jpg" alt="Infinity" title="Infinity">
 	<figcaption>345 Jingle Rd, Brooklyn, NY</figcaption>
@@ -34,7 +41,7 @@
 	<!-- entire viewable area-->
 </section>
 
-	<section id="promotional">
+	<section id="promotional" class="col-2 first">
 		<!-- promo video-->
 		<figure>
 		<video controls>
@@ -46,39 +53,48 @@
 	</figure>
 	</section>
 
-	<section id="details">
-		<div>
-			<h3 class="milk-text">Contact</h3>
-			<p>
-				email: <a href="mailto:info@exceptionalrealty.com">info@exceptionalrealty.com</a><br>
-				phone: +124358165
+	<section id = "news" class="col-1">
+		<h3>Company News</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+	</section>
 
-			</p>
-			<h3 class="milk-text">Correspondence</h3>
-			<address>
-				Exceptional Realty<br>
-				P.O.Box 1215<br>
-				Brooklyn, NY
-			</address>
-		</div>
-			<div>
-				<h3>Links</h3>
+	<!--What we are aiming to do here is that we will size the promotional section to take up two-thirds of the page and the news section will take up one-third. These two sections will display side by side as columns. Below in the details section we have three divs and each of these will also become a column that spans one-third.-->
+</div> <!--wrapper -->
+		<section id="details">
+			<div class="wrapper clearfix">
+			<div class="col-1 first">
+				<h3 class="milk-text">Contact</h3>
 				<p>
-					<a href="#" target="_blank">Home Restoration</a><br>
-					<a href="#" target="_blank">Affordable Mortgages</a><br>
-					<a href="#" target="_blank">Professional Moving Crew</a>
-				</p>
-			</div>
+					email: <a href="mailto:info@exceptionalrealty.com">info@exceptionalrealty.com</a><br>
+					phone: +124358165
 
-			<div>
-				<h3 class="milk-text">Follow</h3>
-				<p>
-					<a href="#" target="_blank">Twitter</a><br>
-					<a href="#" target="_blank">Facebook</a><br>
-					<a href="#" target="_blank">YouTube</a>
 				</p>
+				<h3 class="milk-text">Correspondence</h3>
+				<address>
+					Exceptional Realty<br>
+					P.O.Box 1215<br>
+					Brooklyn, NY
+				</address>
 			</div>
-		</section>
+				<div class="col-1">
+					<h3 class="milk-text">Links</h3>
+					<p>
+						<a href="#" target="_blank">Home Restoration</a><br>
+						<a href="#" target="_blank">Affordable Mortgages</a><br>
+						<a href="#" target="_blank">Professional Moving Crew</a>
+					</p>
+				</div>
+
+				<div class="col-1">
+					<h3 class="milk-text">Follow</h3>
+					<p>
+						<a href="#" target="_blank">Twitter</a><br>
+						<a href="#" target="_blank">Facebook</a><br>
+						<a href="#" target="_blank">YouTube</a>
+					</p>
+				</div>
+				</div> <!--wrapper -->
+			</section>
 <footer>
 	&copy; 2014 Exceptional Realty. All Rights Reserved.
 </footer>

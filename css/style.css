@@ -30,7 +30,6 @@ figcaption {
 /*ID selector (apply to one unique element per page)*/
 
 #logo{
-	background-color:  aqua;
 }
 
 /*Descendent selector*/
@@ -58,3 +57,139 @@ figcaption {
 #details a:active {
 	color:  red;
 }
+
+/*LAYOUT */
+
+* {
+	-webkit-box-sizing:  border-box; 
+	-moz-box-sizing:  border-box;
+	box-sizing:  border-box;/*it will include both padding and border into the width*/
+}
+
+/*
+Here we set all elements (using the universal selector *) to size themselves using border-box 
+where all borders and padding will be included in the width set on elements. 
+We used the -webkit and -moz prefixes to get this to work in older browsers as well.
+*/
+
+.wrapper {
+	width:  960px;
+	margin: 0 auto;
+}
+
+/*Here we gave it a fixed width and centered it by giving it auto margin on the left and right. 
+I also gave it a light gray background color just for the sake of seeing the wrapper. 
+We will end up removing this later on and put some nicer looking background styling in. 
+Save the page and head back to the browser and refresh. You should see the wrapper centering our content.*/
+
+
+.col-1{ /* this column will span one-third */
+	float:  left; /*set all the columns to float, that way they will position themselves side by side each other. */
+	width:  32%;
+	background: #ccc
+}
+
+/*
+Then we will set a width on each element. 
+To calculate the width let's start with the columns that span one-third of the wrapper.
+Since we are using percentages we can assume we have 100% of space inside the wrapper. 
+Then we subtract any margin between the columns. Since we have 2% margin between the first 
+and second column and another 2% between the second and third column, that makes 4% total. 
+100% minus 4% margin equals 96% left over. then we can divide the 96% by 3 (for the three columns) 
+to get a width of 32% for each column (col-1). To figure out the width of the column that stretches 
+two-thirds we can take 100% minus a single one-third column 32% minus 2% margin between them equals 
+a width of 66% for the two-thirds column (col-2). Then we will set a background color for now just 
+so we can see them.
+*/
+
+
+
+.col-2{/* this column will span two-thirds */
+	float:  left;
+	width:  66%;
+	background: #ccc
+
+}
+
+.col-3{/* this column will span all the entire wrapper */
+	background: #ccc;
+
+}
+
+/*
+Now we need to set margin on the columns. A common strategy is to set a left margin for all columns except for 
+the first one. To do so we can write an attribute selector to select any element that has the characters "col-" 
+in its class name. This will select all of our columns for us regardless of the number on the end of its class name. 
+then we can create a class called first to remove left margin for any first column in a row.
+
+*/
+
+[class*="col-"]{
+	margin-left:  2%;
+}
+
+.first {
+	margin-left:  0%
+}
+
+.clearfix:after {
+	content:  ".";
+	display:  block;
+	clear:  both;
+	visibility:  hidden;
+	height:  0;
+	line-height:  0;
+}
+
+
+
+/*MEDIA*/
+
+img, video, audio {
+	max-width:  100%; /*will allow them to be within the limits of parent container*/
+}
+
+
+
+/*SECTIONS*/
+
+header{
+	position: fixed;
+	top:  0;
+	left:  0;
+	width: 100%;
+	background:  #fff;
+	z-index: 1;
+}
+
+section{
+	padding:  20px;
+	margin-bottom:  20px;
+}
+/*
+This will add some spacing inside our section elements. The content is now padded from the edge of our sections, 
+but this additional padding 
+is added to the width of our columns and now some of the columns no longer fit side by side. We can fix this 
+by setting the browser to use the IE box model instead where padding is included in the set width automatically.
+*/
+
+/*SOCIAL*/
+
+#social {
+	position:  fixed;
+	top:  200px;
+	right: 20px;
+	width: 40px;
+	z-index: 1;
+
+}
+#social a {
+	display:  block;
+	width:  40px;
+	height:  40px;
+	background: yellow;
+
+}
+
+
+
